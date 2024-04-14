@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+
+	th:replace="~{base::layout(~{::section})}">
+
+<head>
+
+<meta charset="ISO-8859-1">
+
+<title>Login page</title>
+
+</head>
+
+<body>
+
+	<section>
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-8 offset-md-2">
+
+					<div class="card mt-1" style="border-radius: 1rem;">
+
+						<form action="/login" method="post">
+
+							<div class="card-header text-center fs-4">Login</div>
+ 
+							<div th:if="${param.error}" class="alert alert-danger">
+
+								Invalid Username & Password</div>
+ 
+							<div th:if="${param.logout}" class="alert alert-success">
+
+								Logout Successfully</div>
+ 
+ 
+							<div class="card-body">
+
+								<div class="mb-3">
+
+									<label>Email</label> <input type="text" name="username"
+
+										class="form-control" placeholder="Enter your email" required>
+
+								</div>
+
+								<div class="mb-3">
+
+									<label>Password</label> <input type="text" name="password"
+
+										class="form-control" placeholder="Enter your password" required>
+
+								</div>
+
+								<button style="background-color: #8b008b;" class="btn btn-primary col-md-12">Login</button>
+
+								<a class="small text-muted" th:href="@{/loadForgetPassword}">Forgot password?</a>
+
+										<p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a
+
+												th:href="@{/register}" style="color: #393f81;">Register here</a></p>
+
+							</div>
+
+						</form>
+
+						<!-- <div class="text-center mb-3">
+
+							<a href="/loadForgetPassword" class="text-decoration-none">Forget Password?</a>
+
+						</div> -->
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+ 
+	</section>
+
+</body>
+
+</html>

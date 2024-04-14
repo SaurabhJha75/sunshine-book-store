@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+
+		<div class="card mt-2" style="margin-left: 100px; margin-right: 100px; border-radius: 1em">
+			<div class="card-body">
+				<div class="container text-center">
+
+					<!-- <img style="height: 170px; width: 170px; border-radius: 50%;" class="my_profile_image"
+						th:src="@{'/IMG/'+${contact.image}}" alt="profile image" /> -->
+
+					<h3 class="mt-2">
+						<span th:text="${user.fullname}"></span>
+					</h3>
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">SBS2023<span th:text="${user.id}"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<th scope="row">Qualification</th>
+								<td><span th:text="${user.qualification}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Address</th>
+								<td><span th:text="${user.address}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Phone</th>
+								<td><span th:text="${user.mobileNumber}"></span></td>
+							</tr>
+
+							<tr>
+								<th scope="row">Email</th>
+								<td><span th:text="${user.email}"></span></td>
+							</tr>
+
+						</tbody>
+
+					</table>
+
+					<!--Button inside the card-->
+					<!-- <div class="container mt-4 text-center">
+<button class="btn btn-success col-md-12 btn-block">Edit</button>
+<button class="btn btn-danger col-md-12 btn-block mt-1" th:href="@{/user/deleteprofile}">Delete</button>
+</div> -->
+
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+
+</html>
+
+<!-- <h1 class="text-center mt-3">User Profile Page</h1>
+<h2>Name : [[${user.fullname}]]</h2>
+<h3>Email : [[${user.email}]]</h3>
+<h4>Qualification : [[${user.qualification}]]</h4> -->

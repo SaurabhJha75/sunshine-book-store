@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="card" style="margin-left: 100px; margin-right: 100px; ">
+			<div class="card-body">
+				<h1 class="text-center mt-3">User After Login: Home Page</h1>
+				<h2>Name : [[${user.fullname}]]</h2>
+				<h3>Email : [[${user.email}]]</h3>
+				<h4>Qualification : [[${user.qualification}]]</h4>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
